@@ -13,8 +13,8 @@ def CleanDir( Dir ):
                 #    autoRun.exception( "remove %s error." %filePath )   #引入logging
                     print 'exception occurs'
             elif os.path.isdir( filePath ):
-                if filePath[-4:].lower() == ".svn".lower():
-                    continue
+                #if filePath[-4:].lower() == ".svn".lower():
+                #    continue
                 shutil.rmtree(filePath,True)
     return True
 
@@ -22,3 +22,4 @@ Dir = "C:\\Windows\\temp"
 CleanDir(Dir)
 Dir = "C:\\Users\\Administrator\\AppData\\Local\\Temp"
 CleanDir(Dir)
+os.system('pause')
