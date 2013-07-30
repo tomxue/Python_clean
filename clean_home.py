@@ -25,10 +25,11 @@ Dir = "C:\\Users\\Administrator\\AppData\\Local\\Temp"
 CleanDir(Dir)
 os.system('pause')
 
-# apply database to do something
 con = sqlite3.connect("mydb")
 cur = con.cursor()
-cur.execute('CREATE TABLE foo (o_id INTEGER PRIMARY KEY, fruit VARCHAR(20), veges VARCHAR(30))')
+db_exist = os.path.isfile('mydb')
+if not db_exist:
+    cur.execute('CREATE TABLE foo (o_id INTEGER PRIMARY KEY, fruit VARCHAR(20), veges VARCHAR(30))')
 con.commit()
 cur.execute('INSERT INTO foo (o_id, fruit, veges) VALUES(NULL, "apple", "broccoli")')
 con.commit()
