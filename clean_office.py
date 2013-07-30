@@ -20,6 +20,6 @@ def CleanDir( Dir ):
 
 Dir = "C:\\Windows\\temp"
 CleanDir(Dir)
-Dir = "C:\\Users\\Administrator\\AppData\\Local\\Temp"
+Dir = "C:\\Users\\tomxue\\AppData\\Local\\Temp"
 CleanDir(Dir)
 os.system('pause')
