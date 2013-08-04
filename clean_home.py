@@ -1,6 +1,7 @@
 import os
 import shutil
 import sqlite3
+import time
 
 def CleanDir( Dir ):
     if os.path.isdir( Dir ):
@@ -30,7 +31,9 @@ con = sqlite3.connect("mydb")
 cur = con.cursor()
 cur.execute('CREATE TABLE if not exists foo(o_id INTEGER PRIMARY KEY, fruit VARCHAR(20), veges VARCHAR(30))')
 con.commit()
-cur.execute('INSERT INTO foo(o_id, fruit, veges) VALUES(NULL, "apple", "broccoli")')
+currentTime = time.strftime('%Y-%m-%d:%H:%M:%S',time.localtime(time.time()))
+print currentTime
+cur.execute("INSERT INTO foo(o_id, fruit, veges) VALUES(NULL, '%s', 'broccoli')" %(currentTime))
 con.commit()
 print cur.lastrowid
 
