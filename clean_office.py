@@ -22,4 +22,6 @@ Dir = "C:\\Windows\\temp"
 CleanDir(Dir)
 Dir = "C:\\Users\\tomxue\\AppData\\Local\\Temp"
 CleanDir(Dir)
+Dir = "C:\\Users\\xuejd1\\AppData\\Local\\Temp"
+CleanDir(Dir)
 os.system('pause')
