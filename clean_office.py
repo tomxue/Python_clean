@@ -39,7 +39,7 @@ while(1):
         continue
     else:
         print u'目标进程不存在'   
-    print time.time()
+    print time.strftime("%Y-%m-%d %H:%M:%S")
     ret = os.system('tasklist | find /i "qq.exe"')  # 不区分大小写
     print ret
     print '-'*50
