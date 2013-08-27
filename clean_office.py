@@ -1,5 +1,6 @@
 import os
 import shutil
+import time
 
 def CleanDir( Dir ):
     if os.path.isdir( Dir ):
@@ -25,3 +26,22 @@ CleanDir(Dir)
 Dir = "C:\\Users\\xuejd1\\AppData\\Local\\Temp"
 CleanDir(Dir)
 os.system('pause')
+
+
+####### kill the target proress ######### 
+ret = 0
+ 
+while(1):
+    if ret==0:
+        print u'目标进程存在，杀死该进程'   
+        os.system('TASKKILL /F /IM qq.exe')
+        ret = 1
+        continue
+    else:
+        print u'目标进程不存在'   
+    print time.time()
+    ret = os.system('tasklist | find /i "qq.exe"')  # 不区分大小写
+    print ret
+    print '-'*50
+ 
+    time.sleep(5)
